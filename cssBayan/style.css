@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: Roboto, sans-serif;
+  height: 200rem;
+  background-color: #BFE2FF;
+}
+
+.container {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  padding: 1rem 0 2.5rem 0;
+  align-items: stretch;
+  justify-content: center;
+  border-top: dashed darkblue;
+}
+
+.accor__item-icon {
+  height: 0;
+  width: 0;
+  transition: 1.3s;
+}
+
+.header__title {
+  font-size:  4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.accordion__title {
+  text-align: center;
+  background-color: #464dcb;
+  color: #FFF;
+}
+
+.love__mem {
+  display: block;
+  height: 0;
+  margin: 0 auto;
+  width: 20%;
+  transition: 0.3s;
+}
+
+.accor__input {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.accor__label {
+  cursor: pointer;
+  border;
+}
+
+.accor__input:checked ~ .love__mem {
+  height: 100%;
+  padding: 0 0 1rem 0;
+}
+
+.accor__input:checked + .title > .header {
+  color: blue;
+}
+
+.accor__input:checked + .title > .accor__item-icon {
+  transform: rotate(0.25turn);
+}
+
+.header{
+  font-size: 1.5rem;
+  min-width: 100%;
+  color: black;
+  transition: 0.5s;
+}
+
+@media (max-width: 1920px) {
+  h1 {
+    font-size: 4rem;
+  }
+  .header {
+    font-size: 1.5rem;
+  }
+  .accor__input:checked ~ .love__mem {
+    width: 40%;
+  }
+}
+
+@media (max-width: 820px) {
+  h1 {
+    font-size: 5rem;
+  }
+  .header {
+    font-size: 1rem;
+  }
+  .accor__input:checked ~ .love__mem {
+    width: 70%;
+  }
+}
+
+@media (max-width: 320px) {
+  h1 {
+    font-size:3rem;
+  }
+  .title {
+    padding: 0.5rem 0 0.5rem 0;
+  }
+  .header {
+    font-size:0.5rem;
+  }
+  .accor__input:checked ~ .love__mem {
+    width: 100%;
+  }
+}
+
+@media(hover:hover){
+  .accor__label:hover > .love__mem {
+    height: 100%;
+    width: 40%;
+  }
+  .accor__label:hover > .title > .accor__item-icon {
+    transform: rotate(1.25turn);
+    width: 1rem;
+    height: 1rem;
+  }
+  .accordion:hover > .accor__item > .accor__label > .title > .header {
+    color: rgb(112, 130, 231);
+  }
+}
